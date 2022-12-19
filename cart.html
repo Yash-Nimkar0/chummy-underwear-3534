@@ -102,14 +102,14 @@
     if(cartdata==null){
         cartdata=[]
     }
-    display(cartdata)
+    
     let total=document.getElementById('total')
     let sum=0
     for(let j=0;j<cartdata.length;j++){
         sum=sum+Number(cartdata[j].price)
         total.innerText="Your Total : "+sum+"$"
     }
-    
+    display(cartdata)
     function display(data){
         box.innerHTML=null
         for(let i=0;i<(data.length);i++){
@@ -135,6 +135,13 @@
                 data.splice(i,1)
                 display(data)
                 localStorage.setItem('cart',JSON.stringify(data))
+                let sum=0
+                for(let j=0;j<cartdata.length;j++){
+                    localStorage.setItem('cart',JSON.stringify(data))
+        sum=sum+Number(cartdata[j].price)
+        total.innerText="Your Total : "+sum+"$"
+        
+    }
             })
             
           
